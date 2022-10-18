@@ -1,47 +1,27 @@
 import React, { Component } from "react";
 import Button from "@mui/material/Button";
-
+import { connect } from 'react-redux';
 class index extends Component {
-  componentDidMount() {}
+  handleClick=()=>{
+    this.props.query('dsdddd')
+  }
   render() {
+    const {text} = this.props
     return (
       <div>
-        <Button variant="contained">测试</Button>
+        {text}
+        <Button variant="contained" onClick={this.handleClick}>测试</Button>
       </div>
     );
   }
 }
 
-export default index;
+const mapStateToProps = state => ({
+  text: state.test.text
+})
 
+const mapDispatchToProps = dispatch => ({
+  query: dispatch.test.query,
+})
 
-// import React from 'react';
-// import { connect } from 'react-redux';
-
-// const Count = ({
-//   number,
-//   increase,
-//   decrease
-// }) => {
-//   return (
-//     <div className="count-container">
-//       <h1>數字計數器</h1>
-//       <div>{number}</div>
-//       <div>
-//         <button className="increase-btn" onClick={() => increase(1)}>點擊加1</button>
-//         <button className="decrease-btn" onClick={() => decrease(1)}>點擊減1</button>
-//       </div>
-//     </div>
-//   )
-// }
-
-// const mapStateToProps = state => ({
-//   number: state.count.number
-// })
-
-// const mapDispatchToProps = dispatch => ({
-//   increase: dispatch.count.increase,
-//   decrease: dispatch.count.decrease
-// })
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Count);
+export default connect(mapStateToProps, mapDispatchToProps)(index);
