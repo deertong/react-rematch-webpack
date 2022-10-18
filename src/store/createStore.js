@@ -6,13 +6,12 @@ import { createBrowserHistory } from 'history'
 import { routerMiddleware } from 'connected-react-router'
 import createRootReducer from '../reducers'
 
-const loading = loadingPlugin();
 
 export const history = createBrowserHistory()
 
 const middlewares = [thunk, routerMiddleware(history)];
 const store = init({
-  plugins: [loading],
+  plugins: [loadingPlugin()],
   models,
   redux: {
       reducers: createRootReducer(history),
