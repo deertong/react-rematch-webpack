@@ -10,17 +10,18 @@ const Redirect = ({ to }) => {
   });
   return null;
 };
-export default class mian extends Component {
-  render() {
-    return (
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Redirect to="/home" />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </Layout>
-    );
-  }
+
+function Main(props) {
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Redirect to="/home" />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Layout>
+  );
 }
+
+export default Main;

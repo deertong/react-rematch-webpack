@@ -1,27 +1,29 @@
 import React, { Component } from "react";
-import Button from "@mui/material/Button";
-import { connect } from 'react-redux';
+import { Button } from "@mui/material";
+import { connect } from "react-redux";
 class index extends Component {
-  handleClick=()=>{
-    this.props.query('dsdddd')
-  }
+  handleClick = () => {
+    this.props.query("dsdddd");
+  };
   render() {
-    const {text} = this.props
+    const { text } = this.props;
     return (
       <div>
         {text}
-        <Button variant="contained" onClick={this.handleClick}>测试</Button>
+        <Button variant="contained" onClick={this.handleClick}>
+          测试
+        </Button>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  text: state.test.text
-})
+const mapStateToProps = (state) => ({
+  text: state.test.text,
+});
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   query: dispatch.test.query,
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(index);
