@@ -1,17 +1,18 @@
 import React, { Component, Fragment } from 'react'
 import { Button } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './style.less'
 
 function Layout(props) {
+    const navigate = useNavigate();
     const onOpen = (url) => {
-        props.history.push(url)
+        navigate(url)
     }
     return (
         <Fragment>
             <div>
-                <Link to={'/home'}>首页</Link>
-                <Link to={'/about'}>关于</Link>
+                <Button onClick={() => onOpen('/home')}>首页</Button>
+                <Button onClick={() => onOpen('/about')}>关于</Button>
             </div>
             {props.children}
         </Fragment>
