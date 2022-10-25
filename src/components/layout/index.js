@@ -1,19 +1,13 @@
-import React, { Component, Fragment } from 'react'
-import { Button } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+import React, { Fragment, useEffect } from 'react'
 import './style.less'
 
 function Layout(props) {
-    const navigate = useNavigate();
-    const onOpen = (url) => {
-        navigate(url)
-    }
+    useEffect(() => {
+        // 打开首次调用
+        console.log('layout')
+    }, [])
     return (
         <Fragment>
-            <div>
-                <Button onClick={() => onOpen('/home')}>首页</Button>
-                <Button onClick={() => onOpen('/about')}>关于</Button>
-            </div>
             {props.children}
         </Fragment>
     )
