@@ -10,7 +10,14 @@ function index() {
   const navigate = useNavigate();
   return (
     <div className="tabs-content">
-      <div className="nav-top">
+      <div className="main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/list" element={<List />} />
+          <Route path="/mine" element={<Mine />} />
+        </Routes>
+      </div>
+      <div className="nav-bottom">
         <div>
           <Button onClick={() => navigate("/tab")}>首页</Button>
         </div>
@@ -21,11 +28,6 @@ function index() {
           <Button onClick={() => navigate("/tab/mine")}>我的</Button>
         </div>
       </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/list" element={<List />} />
-        <Route path="/mine" element={<Mine />} />
-      </Routes>
     </div>
   );
 }

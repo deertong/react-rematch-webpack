@@ -1,8 +1,22 @@
-.tabs-content{
-  .nav-top{
-    width: 750px;
+.tabs-content {
+  .nav-bottom {
+    height: 45px;
+    max-width: 750px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+  }
+
+  .main {
+    max-width: 750px;
+    height: calc(100vh - 45px);
+    margin: 0 auto;
+    overflow-y: auto;
+    background-color: rgb(231, 235, 240);
+
+    .width90 {
+      width: 90%;
+      margin: auto;
+    }
   }
 }
