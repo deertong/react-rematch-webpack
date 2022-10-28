@@ -26,6 +26,7 @@ function index() {
           <Route path="/list" element={<List />} />
           <Route path="/mine" element={<Mine />} />
         </Routes>
+        <div className="footer" />
       </div>
       <div className="nav-bar">
         <div className="bar-box">
