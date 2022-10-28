@@ -6,6 +6,7 @@ import {
   Avatar,
   ListItemAvatar,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { ListAltOutlined } from "@mui/icons-material";
 import { connect } from "react-redux";
 import moment from "moment";
@@ -14,12 +15,14 @@ import "./style.less";
 const dateFormat = "YYYY-MM-DD HH:mm:ss";
 function index(props) {
   const { todoList } = props;
+  const navigate = useNavigate();
+  const onOpenDetail = (value) => {
+    navigate(`/details/${value.date}`);
+  };
   return (
-    <div className="list-content width90">
+    <div className="list-content">
       {todoList.length > 0 && (
-        <List
-          sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-        >
+        <List sx={{ width: "100%", bgcolor: "background.paper" }}>
           {todoList.map((item) => {
             const date = moment(item.date).format(dateFormat);
             const isDone = item.done ? "完成" : "未完成";
@@ -36,7 +39,7 @@ function index(props) {
               </span>
             );
             return (
-              <ListItem key={item.date}>
+              <ListItem key={item.date} onClick={() => onOpenDetail(item)}>
                 <ListItemAvatar>
                   <Avatar>
                     <ListAltOutlined />

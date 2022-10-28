@@ -4,6 +4,7 @@ import moment from 'moment';
 export default {
   state: {
     todoList: [],
+    detailInfo: {}
   },
 
   reducers: {
@@ -11,11 +12,15 @@ export default {
       return { ...state, ...payload }
     }
   },
-
   effects: {
     update(value) {
       this.pushTodo({
-        todoList:value
+        todoList: value
+      });
+    },
+    getDetail(value) {
+      this.pushTodo({
+        detailInfo: value
       });
     }
   }
