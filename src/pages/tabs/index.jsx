@@ -47,6 +47,7 @@ function index() {
           />
         </div>
       </div>
+      <div style={{ height: "25px" }} />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import './style.less'
 
 export default function index() {
   return (
-    <div className="mine-content width90">
+    <div className="mine-content">
       <Card style={{ padding: "10px"}}>
         <Avatar
           sx={{ width: 80, height: 80, bgcolor: "rgb(253, 126, 151)" }}
