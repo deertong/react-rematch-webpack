@@ -65,7 +65,7 @@ function index(props) {
           return (
             <div key={item.date} className="column-box">
               <div>
-                <Checkbox onChange={(e) => onCheckChange(e, item)} />
+                <Checkbox checked={item.done} onChange={(e) => onCheckChange(e, item)} />
                 <span
                   style={
                     item.done
