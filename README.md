@@ -5,5 +5,5 @@
 ```
 npm i
 npm start //启动开发环境
-npm run bulid
+npm run bulid // 打包
 ```
